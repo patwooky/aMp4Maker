@@ -37,9 +37,10 @@ initial code
 - user can only supply a folder as source
 
 ----
-Configuring the Tool
+## Configuring the Tool
 
-## Dependencies
+### Setting up Dependencies
+
 ### FFmpeg
 ![FFmpeg Logo](https://ffmpeg.org/img/ffmpeg3d_white_20.png)
 
@@ -53,3 +54,23 @@ Specifically, the full path to `ffmpeg.exe` is stored in the variable `path_ffmp
 aMp4Maker requires the free viewing/reviewing utility DJV Imaging (http://djv.sourceforge.net/) to be present in accessible storage.
 
 Specifically, the full path to `djv_view.exe` is stiored in the variable `path_djv` in the `config variables` section of the code.
+
+### Setting Up to Run from a Batch File
+aMp4Maker can run off the command-line, but the printed messages will be lost when the console window closes before the user can examine the output. 
+
+A better way is to call it from a batch file that has a pause function at the end that waits for a key-press event before the console window goes away.
+
+With the batch file, user can still drag and drop files and folders onto the batch file, and these will still be able to get passed on to the Python tool as arguments.
+
+### Using and Customising the Batch File
+The batch file needs to be placed in the same directory as the Python tool.
+
+In the batch file there is a line of code that says:
+
+    R:\Pipeline\App_VHQ\Python27x64\python.exe  %~dp0aMp4Maker.py %*
+
+Change the full python path to your python executable to point to `my\python\dir\python.exe`. 
+
+`%~dp0aMp4Maker.py` passes the full path of `aMp4Maker.py` to Python.
+
+`%*` passes along all the arguments to aMp4Maker.
