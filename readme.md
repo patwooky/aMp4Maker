@@ -21,16 +21,17 @@ Name of image sequence should follow this convention:
 
     <base_name>.####.ext
 
-
+----
 ## change log:
 
 ### v002_01
---
+---
 - user can now supply a single file in an image sequence, and tool should be able to detect the sequence and create an mp4 movie
 - if user supplies a single movie file, it should run ffmpg to re-encode the movie file into mp4
 - if user supplies a folder, it will go through the entire folder converting each unique img seq into mp4, and each movie file into mp4
 
 ### v001_01
---
+---
+
 initial code
 - user can only supply a folder as source
