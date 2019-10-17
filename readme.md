@@ -1,6 +1,6 @@
 # a_MP4_Maker v02_01
 ### Written by Patrick Woo patrickwoo@yahoo.com
-### date: 20191014
+### Date: 20191014
 
 ### Description
 This tool converts image sequence(s) into corresponding MP4 movie file(s), 
