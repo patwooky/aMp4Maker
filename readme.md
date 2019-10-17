@@ -7,15 +7,19 @@ This tool converts image sequence(s) into corresponding MP4 movie file(s),
 and transcodes movie files (mov, avi, flv, etc) into MP4 files.
 
 ### Usage:
-    Drop a single image belonging to a sequence, a movie file, for single seq / single file operation.
-    
-    Drop multiple movie files or images belonging to different sequences for multiple specific conversions.
+There are a few ways to use this tool.
+- from the command-line: `python aMp4Maker arg1 arg2 arg3` where each arg should be a full path of a movie file or a single image from a sequence of images. Please make sure to follow the naming convention for image sequences stated below.
 
-    Drop an entire folder onto the this script 
-    and MP4 file(s) will be created for each unique sequence of images and each movie file in the folder.
+- Drop a single image belonging to a sequence, a movie file, for single seq / single file operation.
 
-    Name of image sequence should follow this convention:
-        <base_name>.####.ext
+- Drop multiple movie files or images belonging to different sequences for multiple specific conversions.
+
+- Drop an entire folder onto the this script 
+and MP4 file(s) will be created for each unique sequence of images and each movie file in the folder.
+
+Name of image sequence should follow this convention:
+
+    <base_name>.####.ext
 
 
 ### change log ###
