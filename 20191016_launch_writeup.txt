@@ -1,0 +1,15 @@
+Hello again people
+
+I re-introduce to you a one-stop MP4 converter solution that can cleverly convert image sequences and movies files in one step!
+
+Onto the same icon, you can drag single image from a sequence, and it creates an mp4 from the sequence.
+If you drag a movie file (mov, avi, flv), it creates a mp4 for you.
+
+Finally, if you drag in multiple files or even an entire folder that contains files of mixed types (images, movies), it will also do its thing (image seq -> mp4, mov -> mp4).
+
+I think I can finally call it smart. :)
+
+At the moment it will break if there are spaces / non-alpha numeric characters in the incoming file paths.
+
+Give it a try! All you need to do is drop your file(s) / folder(s) on the aMp4Maker icon in the launcher tray.
+
