@@ -2,10 +2,11 @@
 ### Written by Patrick Woo patrickwoo@yahoo.com
 ### date: 20191014
 
+### Description
 This tool converts image sequence(s) into corresponding MP4 movie file(s), 
 and transcodes movie files (mov, avi, flv, etc) into MP4 files.
 
-Usage:
+### Usage:
     Drop a single image belonging to a sequence, a movie file, for single seq / single file operation.
     
     Drop multiple movie files or images belonging to different sequences for multiple specific conversions.
@@ -17,14 +18,14 @@ Usage:
         <base_name>.####.ext
 
 
--- change log --
+### change log ###
 v002_01
--------
+--
 - user can now supply a single file in an image sequence, and tool should be able to detect the sequence and create an mp4 movie
 - if user supplies a single movie file, it should run ffmpg to re-encode the movie file into mp4
 - if user supplies a folder, it will go through the entire folder converting each unique img seq into mp4, and each movie file into mp4
 
 v001_01
--------
+--
 initial code
 - user can only supply a folder as source
