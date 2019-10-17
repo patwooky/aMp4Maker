@@ -53,9 +53,14 @@ print('{} args passed in '.format(len(sys.argv)-1))
 # pp(sys.argv[1:])
 
 # -- config variables
-path_djv = r'R:\Pipeline\App_VHQ\djv_win64\bin\djv_view.exe'
+# aMp4Maker needs the following free utilities to function:
+#   FFmpeg (https://ffmpeg.org/) ffmpeg.exe
+#   DJV Imaging (http://djv.sourceforge.net/) djv_view.exe 
+# these utilities must be accessible to the script/operating system at run-time
+
+path_djv = r'R:\Pipeline\App_VHQ\djv_win64\bin\djv_view.exe' # needs full path
 # path_ffmpg = r'H:\patrick\Dropbox\proj\2019\vhq\vhq_pipeline\dos_shell\ffmpeg_bin\ffmpeg.exe'
-path_ffmpg = r'R:\Pipeline\_bin\ffmpeg.exe'
+path_ffmpg = r'R:\Pipeline\_bin\ffmpeg.exe' # needs full path
 imgFormatsDict = ['jpg', 'jpeg', 'png', 'tif', 'exr', 'iff', 'psd', 'tga', 'bmp', 'gif', 'dpx']
 movFormatsDict = ['avi', 'asf', 'mp4', 'mpg', 'mpeg', 'mov', 'm4v', 'mkv', 'flv', 'f4v', 'ogg', 
                     'ogv', 'qt', 'rm', 'rmvb', 'webm', 'wmv', '3gp', '3g2']
