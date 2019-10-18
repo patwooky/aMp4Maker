@@ -35,6 +35,7 @@ Name of image sequence should follow this convention:
 ---
 initial code
 - user can only supply a folder as source
+- can only handle image sequences, cannot convert/transcode movie files.
 
 ----
 ## Configuring the Tool
