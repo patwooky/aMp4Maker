@@ -43,14 +43,14 @@ initial code
 ### Setting up Dependencies
 
 ### FFmpeg
-![FFmpeg Logo](https://tigr.net/wp-content/uploads/2016/12/ffmpeg.logo_-150x150.png)
+[![FFmpeg Logo](https://tigr.net/wp-content/uploads/2016/12/ffmpeg.logo_-150x150.png)](https://ffmpeg.org/)
 
 aMp4Maker requires the free utility FFmpeg (https://ffmpeg.org/) to be present in accessible storage.
 
 Specifically, the full path to `ffmpeg.exe` is stored in the variable `path_ffmpg` in the `config variables` section of the code.
 
 ### DJV Imaging
-![DJV Imaging Logo](http://djv.sourceforge.net/images/djv-logo-large.png)
+[![DJV Imaging Logo](http://djv.sourceforge.net/images/djv-logo-large.png)](http://djv.sourceforge.net/)
 
 aMp4Maker requires the free viewing/reviewing utility DJV Imaging (http://djv.sourceforge.net/) to be present in accessible storage.
 
