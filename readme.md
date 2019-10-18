@@ -42,7 +42,7 @@ initial code
 ### Setting up Dependencies
 
 ### FFmpeg
-![FFmpeg Logo](https://ffmpeg.org/img/ffmpeg3d_white_20.png)
+![FFmpeg Logo](https://tigr.net/wp-content/uploads/2016/12/ffmpeg.logo_-150x150.png)
 
 aMp4Maker requires the free utility FFmpeg (https://ffmpeg.org/) to be present in accessible storage.
 
