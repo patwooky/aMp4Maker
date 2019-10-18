@@ -74,3 +74,5 @@ Change the full python path to your python executable to point to `my\python\dir
 `%~dp0aMp4Maker.py` passes the full path of `aMp4Maker.py` to Python.
 
 `%*` passes along all the arguments to aMp4Maker.
+
+Once these are all set-up to reflect correct locations on your local machine, you should be able to drop single/multiple files and folders onto the batch file and a console window will now open while while the script is running, and will pause at the end of the script for you to inspect the printed log before closing.
