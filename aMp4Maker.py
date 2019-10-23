@@ -5,9 +5,9 @@ import subprocess
 from pprint import pprint as pp
 
 banner = '''
-a_MP4_Maker v02_01
+a_MP4_Maker v02_02
 Written by Patrick Woo patrickwoo@yahoo.com
-date: 20191014
+date: 20191023
 
 This tool converts image sequence(s) into corresponding MP4 movie file(s), 
 and transcodes movie files (mov, avi, flv, etc) into MP4 files.
@@ -28,7 +28,15 @@ Usage:
 changelog = '''
 
 -- change log --
-v002_01
+v002_02 (20191023)
+-------
+- bug fixed: a mov file is interpreted as an image and invoked the message "does not have frame numebers in the expected format: <filename.mov>,
+                skipping basename".
+                A movie file was interpreted as an image when it has more than a 1 file with the same basename (eg, mymovie.mov, mymovie.mp4, mymovie.avi),
+                yet does not stick to the filename.###.ext convention.
+                I removed the check that required the basename to only have one file present, before it can be processed, else it being treated like an image seq
+
+v002_01 (20191014)
 -------
 - user can now supply a single file in an image sequence, and tool should be able to detect the sequence and create an mp4 movie
 - if user supplies a single movie file, it should run ffmpg to re-encode the movie file into mp4
@@ -38,6 +46,7 @@ v001_01
 -------
 initial code
 - user can only supply a folder as source
+- tool can only convert image sequences, cannot transcode movies files.
 
 '''
 
@@ -154,7 +163,8 @@ for this_seq in sys.argv[1:]:
         # print ('fseq is')
         # pp(fseq)
         # ascertain if the file is an image or a movie
-        if len(fseq)==1 and os.path.splitext(fseq[0])[1][1:] in movFormatsDict:
+        print('fseq has a length of {}'.format(len(fseq)))
+        if os.path.splitext(fseq[0])[1][1:] in movFormatsDict:
             # this basename is a movie file
             inFileType = 'm'
             # no specific name it means that all files can be converted
