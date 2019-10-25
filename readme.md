@@ -1,6 +1,6 @@
-# a_MP4_Maker v02_02
+# a_MP4_Maker v02_03
 ### Written by Patrick Woo patrickwoo@yahoo.com
-### Date: 20191023
+### Date: 20191025
 
 ## Description
 This tool converts image sequence(s) into corresponding MP4 movie file(s), 
@@ -24,6 +24,9 @@ Name of image sequence should follow this convention:
 
 ----
 ## Change log:
+### v002_03 (20191025)
+-------
+- added ./utils to house ffmpeg.exe that can be used independently if ffmpeg.exe is not available in the local machine
 
 ### v002_02 (20191023)
 -------

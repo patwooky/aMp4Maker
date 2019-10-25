@@ -5,9 +5,9 @@ import subprocess
 from pprint import pprint as pp
 
 banner = '''
-a_MP4_Maker v02_02
+a_MP4_Maker v02_03
 Written by Patrick Woo patrickwoo@yahoo.com
-date: 20191023
+date: 20191025
 
 This tool converts image sequence(s) into corresponding MP4 movie file(s), 
 and transcodes movie files (mov, avi, flv, etc) into MP4 files.
@@ -28,6 +28,10 @@ Usage:
 changelog = '''
 
 -- change log --
+v002_03 (20191025)
+-------
+- added ./utils to house ffmpeg.exe that can be used independently if ffmpeg.exe is not available in the local machine
+
 v002_02 (20191023)
 -------
 - bug fixed: a mov file is interpreted as an image and invoked the message "does not have frame numebers in the expected format: <filename.mov>,
@@ -56,7 +60,7 @@ print(banner)
 # first argv is the python file path
 if len(sys.argv) < 2:
     print ('Error: This tool needs a path to an image sequence, or a single image belonging to a sequence.\nTerminating.')
-    sys.exit(1)
+    # sys.exit(1)
 
 print('{} args passed in '.format(len(sys.argv)-1))
 # pp(sys.argv[1:])
@@ -68,8 +72,19 @@ print('{} args passed in '.format(len(sys.argv)-1))
 # these utilities must be accessible to the script/operating system at run-time
 
 path_djv = r'R:\Pipeline\App_VHQ\djv_win64\bin\djv_view.exe' # needs full path
-# path_ffmpg = r'H:\patrick\Dropbox\proj\2019\vhq\vhq_pipeline\dos_shell\ffmpeg_bin\ffmpeg.exe'
-path_ffmpg = r'R:\Pipeline\_bin\ffmpeg.exe' # needs full path
+
+# specify where to find ffmpeg.exe
+ffmpg_useScriptPath = False 
+if ffmpg_useScriptPath:
+    # will look for ffmpeg.exe in ./utils in current script path 
+    currentPath = os.path.split(__file__)[0] # gets the path component of this currently running python file
+    # print('current path is %s\n' % currentPath)
+    path_ffmpg = os.path.join(currentPath, 'utils', 'ffmpeg.exe')
+else:
+    # us an explicit path to locate ffmpeg
+    # path_ffmpg = r'H:\patrick\Dropbox\proj\2019\vhq\vhq_pipeline\dos_shell\ffmpeg_bin\ffmpeg.exe' # patrick's storage location at home
+    path_ffmpg = r'R:\Pipeline\_bin\ffmpeg.exe' # needs full path
+print ('path_ffmpg is {}'.format(path_ffmpg))
 imgFormatsDict = ['jpg', 'jpeg', 'png', 'tif', 'exr', 'iff', 'psd', 'tga', 'bmp', 'gif', 'dpx']
 movFormatsDict = ['avi', 'asf', 'mp4', 'mpg', 'mpeg', 'mov', 'm4v', 'mkv', 'flv', 'f4v', 'ogg', 
                     'ogv', 'qt', 'rm', 'rmvb', 'webm', 'wmv', '3gp', '3g2']
@@ -81,6 +96,7 @@ if (os.path.exists(path_djv)):
     print('djv exists at {}'.format(path_djv))
     foundDjv = True
 else:
+    # Djv doesn't exist, and is not critical. Future movie playbacks will be suppressed since foundDjv is False
     print('DJV not found at {}. Movie files will not play using DJV.')
 
 if (os.path.exists(path_ffmpg)):
@@ -90,6 +106,7 @@ else:
     print('The ffmpeg dependency does not exist. Terminating.')
     print('ffmpeg not found: {}'.format(path_ffmpg))
     sys.exit(1)
+sys.exit(1)
 
 
 for this_seq in sys.argv[1:]:
